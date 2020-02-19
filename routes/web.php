@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+
+Route::get('/games', function () {
+    $game = [ 
+        'name' => 'God of War', 
+        'type' => 'Hack and Slash', 
+        'price' => '$ 50' 
+    ];
+
+    return view('games', $game);
 });
