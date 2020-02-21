@@ -8,8 +8,11 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
         <!-- Styles -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <style>
             html, body {
                 background-color: #fff;
@@ -65,16 +68,27 @@
     </head>
     <body>
         <h1 style="text-align: center"> Games List </h1>
-        <div>
-            @if($name == 'God of War') 
-                <h1>This game is awesome</h1>
-            @else 
-                <h1>This is a normal game</h1>
-            @endif
+        <hr style="margin-left:45%; margin-right: 45%; border-top: 2px solid black">
 
-            <h1>{{ $name }}</h1>
-            <h1>{{ $type }}</h1>
-            <h1>{{ $price }}</h1>
+        <div style="display: flex; justify-content: space-evenly;">
+
+            @foreach($games as $game)
+                <div>
+                    <p> {{ $game['name'] }} </p>
+                    <p> {{ $game['type'] }} </p>
+                    <p> {{ $game['price'] }} </p>
+                </div>
+            @endforeach
+
+            <!--@for($i = 0; $i < count($games); $i++)
+                <div>
+                <p> {{ $games[$i]['name'] }} </p>
+                <p> {{ $games[$i]['type'] }} </p>
+                <p> {{ $games[$i]['price'] }} </p>
+                </div>
+            @endfor -->
+
         </div>
+
     </body>
 </html>

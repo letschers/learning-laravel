@@ -16,11 +16,12 @@ Route::get('/', function () {
 });
 
 Route::get('/games', function () {
-    $game = [ 
-        'name' => 'God of War', 
-        'type' => 'Hack and Slash', 
-        'price' => '$ 50' 
+    $games =[
+        [ 'name' => 'God of War', 'type' => 'Hack and Slash',  'price' => '$ 50'],
+        [ 'name' => 'Dark Souls', 'type' => 'Soulsgame',  'price' => '$ 30'],
+        [ 'name' => 'New Dawn', 'type' => 'Horror',  'price' => '$ 15'],
+        [ 'name' => 'Dead Cells', 'type' => 'Roguelite',  'price' => '$ 40']
     ];
 
-    return view('games', $game);
+    return view('games', ['games' => $games]);
 });
