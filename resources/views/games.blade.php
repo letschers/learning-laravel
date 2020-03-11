@@ -5,19 +5,13 @@
 <hr style="margin-left:45%; margin-right: 45%; border-top: 2px solid black">
 
 <div style="display: flex; justify-content: space-evenly;">
-
-
     
     @foreach($games as $game)
-
-        {{-- @if($name == $game['name']) --}}
-            <div class="card">
-                <p> {{ $game['name'] }} </p>
-                <p> {{ $game['type'] }} </p>
-                <p> {{ $game['price'] }} </p>
-            </div>
-        {{-- @endif --}}
-
+        <div class="card">
+            <p> {{ $game->name }} </p>
+            <p> {{ $game->type }} </p>
+            <p> {{ $game->price }} </p>
+        </div>
     @endforeach 
 
     <!--@for($i = 0; $i < count($games); $i++)

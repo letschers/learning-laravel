@@ -3,22 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Game;
 
 class GamesController extends Controller
 {
     public function index()
     {
 
-        $games = [
-            ['name' => 'God of War', 'type' => 'Hack and Slash', 'price' => '$ 50'],
-            ['name' => 'Dark Souls', 'type' => 'Soulsgame', 'price' => '$ 30'],
-            ['name' => 'New Dawn', 'type' => 'Horror', 'price' => '$ 15'],
-            ['name' => 'Dead Cells', 'type' => 'Roguelite', 'price' => '$ 40'],
-        ];
+       $games = Game::all();
+       //$games = Game::orderBy('name', 'desc')->get();
+       //$games = Game::where('name', 'Dark Souls')->get();
+       //$games = Game::latest();
 
         return view('games', [
             'games' => $games,
-            'name' => request('name'),
         ]);
     }
 
