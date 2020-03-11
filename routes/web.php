@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/games', function () {
+    
     $games =[
         [ 'name' => 'God of War', 'type' => 'Hack and Slash',  'price' => '$ 50'],
         [ 'name' => 'Dark Souls', 'type' => 'Soulsgame',  'price' => '$ 30'],
@@ -23,5 +24,8 @@ Route::get('/games', function () {
         [ 'name' => 'Dead Cells', 'type' => 'Roguelite',  'price' => '$ 40']
     ];
 
-    return view('games', ['games' => $games]);
+    return view('games', [
+        'games' => $games,
+        'name' => request('name')
+        ]);
 });
