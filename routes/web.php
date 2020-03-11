@@ -15,24 +15,5 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/games', function () {
-    
-    $games =[
-        [ 'name' => 'God of War', 'type' => 'Hack and Slash',  'price' => '$ 50'],
-        [ 'name' => 'Dark Souls', 'type' => 'Soulsgame',  'price' => '$ 30'],
-        [ 'name' => 'New Dawn', 'type' => 'Horror',  'price' => '$ 15'],
-        [ 'name' => 'Dead Cells', 'type' => 'Roguelite',  'price' => '$ 40']
-    ];
-
-    return view('games', [
-        'games' => $games,
-        'name' => request('name')
-        ]);
-});
-
-Route::get('/games/{id}', function ($id) {
-    
-    //use $id variable to query on db and display on view
-    
-    return view('details', ['id' => $id]);
-});
+Route::get('/games', 'GamesController@index');
+Route::get('/games/{id}', 'GamesController@show');
