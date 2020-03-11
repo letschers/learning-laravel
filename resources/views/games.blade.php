@@ -7,19 +7,18 @@
 <div style="display: flex; justify-content: space-evenly;">
 
 
-
+    
     @foreach($games as $game)
 
-        @if($name == $game['name'])
+        {{-- @if($name == $game['name']) --}}
             <div class="card">
                 <p> {{ $game['name'] }} </p>
                 <p> {{ $game['type'] }} </p>
                 <p> {{ $game['price'] }} </p>
             </div>
-        @endif
-        
-        
-    @endforeach
+        {{-- @endif --}}
+
+    @endforeach 
 
     <!--@for($i = 0; $i < count($games); $i++)
         <div>

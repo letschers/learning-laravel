@@ -29,3 +29,10 @@ Route::get('/games', function () {
         'name' => request('name')
         ]);
 });
+
+Route::get('/games/{id}', function ($id) {
+    
+    //use $id variable to query on db and display on view
+    
+    return view('details', ['id' => $id]);
+});
