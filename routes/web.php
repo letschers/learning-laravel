@@ -15,5 +15,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/games', 'GamesController@index');
-Route::get('/games/{id}', 'GamesController@show');
+Route::get('/games', 'GameController@games');
+Route::get('/games/create', 'GameController@create');
+Route::get('/games/{id}', 'GameController@show');

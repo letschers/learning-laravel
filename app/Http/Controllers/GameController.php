@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Game;
 
-class GamesController extends Controller
+class GameController extends Controller
 {
-    public function index()
+    public function games()
     {
 
        $games = Game::all();
@@ -15,15 +15,21 @@ class GamesController extends Controller
        //$games = Game::where('name', 'Dark Souls')->get();
        //$games = Game::latest();
 
-        return view('games', [
+        return view('games.games', [
             'games' => $games,
         ]);
     }
 
     public function show($id)
     {
-
         //use $id variable to query on db and display on view
-        return view('details', ['id' => $id]);
+        return view('games.show', ['id' => $id]);
+    }
+
+    public function create()
+    {
+
+        return view('games.create');
+
     }
 }
