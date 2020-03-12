@@ -6,6 +6,5 @@
 
 <div style="display: flex; justify-content: space-evenly;">
 
-
 </div>
 @endsection

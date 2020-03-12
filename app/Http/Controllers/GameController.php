@@ -23,7 +23,8 @@ class GameController extends Controller
     public function show($id)
     {
         //use $id variable to query on db and display on view
-        return view('games.show', ['id' => $id]);
+        $game = Game::findOrFail($id); 
+        return view('games.show', ['game' => $game]);
     }
 
     public function create()
