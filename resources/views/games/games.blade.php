@@ -1,11 +1,13 @@
 @extends('layouts.layout')
 
 @section('content')
+<p> {{ session('message')}} </p>
+
 <h1 style="text-align: center"> Games List </h1>
 <hr style="margin-left:45%; margin-right: 45%; border-top: 2px solid black">
 
 <div style="text-align: center; margin-bottom: 1%">
-    <a class="btn btn-dark" href="/create" role="button">Create Game</a>
+    <a class="btn btn-dark" href="/games/create" role="button">Create Game</a>
 </div>
    
 <div class="container">

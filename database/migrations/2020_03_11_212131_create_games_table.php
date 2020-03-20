@@ -17,7 +17,7 @@ class CreateGamesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('type');
-            $table->integer('price');
+            $table->double('price', 8, 2);
             $table->timestamps();
         });
     }

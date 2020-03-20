@@ -12,7 +12,7 @@
     </div>
 </div>
 
-<div style="text-align: center">
-    <a href="/games"> Go Back </a>
+<div style="text-align: center; margin-top: 2%; margin-bottom: 2%;">
+    <a class="btn btn-dark" href="{{ URL::previous() }}" role="button">Go Back</a>
 </div>
 @endsection
