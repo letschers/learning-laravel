@@ -14,10 +14,33 @@
         <label for="price">Price</label>
         <input type="number" step="0.010" class="form-control" id="price" name="price" placeholder="5">
     </div>
-    <div class="form-group">
+    <fieldset>
         <label for="type">Type</label>
-        <input type="text" class="form-control" id="type" name="type" placeholder="Roguelite">
-    </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="type[]" value="Roguelite">
+            <label class="form-check-label" for="roguelite">
+                Roguelite
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="type[]" value="Hack and Slash">
+            <label class="form-check-label" for="hackandslash">
+                Hack and Slash
+            </label>
+        </div>
+        <div class="form-check disabled">
+            <input class="form-check-input" type="checkbox" name="type[]" value="Indie">
+            <label class="form-check-label" for="indie">
+                Indie
+            </label>
+        </div>
+        <div class="form-check disabled">
+            <input class="form-check-input" type="checkbox" name="type[]" value="Souls Like">
+            <label class="form-check-label" for="indie">
+                Souls Like
+            </label>
+        </div>
+    </fieldset>
     <button type="submit" value="Create Game" class="btn btn-dark">Add Game</button>
 </form>
 
