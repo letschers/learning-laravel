@@ -36,15 +36,23 @@ class GameController extends Controller
     public function insert()
     {
         $game = new Game();
-        
+
         $game->name = request('name');
         $game->price = request('price');
-        $game->type = request('type'); 
+        $game->type = request('type');
 
         //error_log($game);
 
         $game->save();
 
         return redirect('/games')->with('message', 'Game Inserted Succesfully');
+    }
+
+    public function delete($id)
+    {
+        $game = Game::findOrFail($id);
+        $game->delete();
+
+        return redirect('/games')->with('message', 'Game Deleted Succesfully');
     }
 }

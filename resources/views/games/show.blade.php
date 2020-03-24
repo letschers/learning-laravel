@@ -9,10 +9,10 @@
         <div class="card" style="margin-bottom: 5%">
             <div class="card-body">
                 <h5 class="card-title">Title - {{ $game->name }}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Price -  ${{ $game->price }}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Price - ${{ $game->price }}</h6>
                 <p class="card-text">
                     <label>Types: </label>
-                    <ul class="list-group"> 
+                    <ul class="list-group">
                         @foreach($game->type as $type)
                         <li class="list-group-item">{{ $type }} </li>
                         @endforeach
@@ -23,7 +23,16 @@
     </div>
 </div>
 
-<div style="text-align: center; margin-top: 2%; margin-bottom: 2%;">
-    <a class="btn btn-dark" href="{{ URL::previous() }}" role="button">Go Back</a>
+<div style="display: flex; justify-content: center; margin-top: 2%; margin-bottom: 2%;">
+    <a class="btn btn-dark" style="margin-right: 1%;" href="{{ URL::previous() }}" role="button">Go Back</a>
+
+    <form action="/games/{{ $game->id }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button class="btn btn-dark" style="margin-right: 1%;">Delete Game</button>
+    </form>
+
+    <a class="btn btn-dark" href="" role="button">Buy</a>
+
 </div>
 @endsection
