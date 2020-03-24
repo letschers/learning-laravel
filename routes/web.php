@@ -20,3 +20,7 @@ Route::get('/games/create', 'GameController@create');
 Route::post('/games', 'GameController@insert');
 Route::get('/games/{id}', 'GameController@show');
 Route::delete('/games/{id}', 'GameController@delete');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
